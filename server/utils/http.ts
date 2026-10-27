@@ -86,12 +86,10 @@ export function rethrowDbError(error: unknown): never {
 }
 
 // ---------------------------------------------------------------
-// Current user (TEMPORARY)
+// Current user
 // ---------------------------------------------------------------
 
-// Until the login system exists, every action is done by user #1
-// (the 'test' user created in the database tests).
-// This will be replaced by real authentication later.
-export function getCurrentUserId(_event: H3Event): number {
-  return 1
+// The auth middleware has already authenticated the request.
+export function getCurrentUserId(event: H3Event): number {
+  return getCurrentUser(event).id
 }

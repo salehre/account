@@ -4,5 +4,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     databaseUrl: '',
+
+    cookieSecure: false,
   },
 })
